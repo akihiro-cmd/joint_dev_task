@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  p names.push("斉藤")
+  p names <<("斉藤")
   
 
 
@@ -16,7 +16,7 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
-  array = array1.concat(array2)
+  array = array1 + array2
   p array
 
 end
