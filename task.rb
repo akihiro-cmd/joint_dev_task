@@ -72,24 +72,9 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  ruby = "Ruby"
-  php = "Php"
-  python = "Python"
-  javascript = "Javascript"
-
-  programming_languages = %W(#{ruby} #{php} #{python} #{javascript})
-
-  upper_case_programming_languages = %W(ruby_2 php_2 python_2 javascript_2)
-
-  ruby_2 = "RUBY"
-  php_2 = "PHP"
-  python_2 = "PYTHON"
-  javascript_2 = "JAVASCRIPT"
-
-  upper_case_programming_languages = %W(#{ruby_2} #{php_2} #{python_2} #{javascript_2})
-
-
-
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
+  
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -109,12 +94,13 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  if foods.include?("うに")
-    p "好物です"
-  else
-    p "まぁまぁ好きです"
+  foods.each do |food|
+    if food.include?("うに")
+      p "好物です"
+    else
+      p "まぁまぁ好きです"
+    end
   end
-
 end
 
 def q11
