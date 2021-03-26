@@ -129,8 +129,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data[:age] = update_data[:age]
-  user_data[:address] = update_data[:address]
+  user_data.store(:age,32 )
+  user_data.store(:address, "沖縄")
 
   p user_data
 
@@ -150,13 +150,9 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  if data1.include?(:age)
-    p "OK"
-  end
-
-  if not data2.include?(:age)
-    p "NG"
-  end
+  p data1.include?(:age) ? "OK" : "NG"
+  p data2.include?(:age) ? "OK" : "NG"
+    
 
 end
 
