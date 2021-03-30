@@ -171,7 +171,7 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  attr_accessor :name, :age, :gender
+  # attr_accessor :name, :age, :gender
 
   def initialize(name:, age:, gender:)
     @name = name
@@ -181,9 +181,11 @@ class UserQ17
 
   def info
 
-    p "名前：#{@name}"
-    p "年齢：#{@age}"
-    p "性別：#{@gender}"
+    puts <<~TEXT
+    名前：#{@name}
+    年齢：#{@age}
+    性別：#{@gender}
+    TEXT
     
   end
 
@@ -201,17 +203,16 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  attr_accessor :name, :age
   def initialize(name:, age:)
     @name = name
     @age = age
   end
 
   def introduce
-    if @age == 32
-      puts "こんにちは、#{@name}と申します。宜しくお願いいたします"
-    elsif @age == 10
-      puts "はいさいまいど〜、#{@name}です!!!"
+    if @age >= 20
+      print "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+    elsif @age < 20
+      print "はいさいまいど〜、#{@name}です!!!"
     end
   end
 end
@@ -227,9 +228,12 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  def initialize(name:)
     @name = name
+  end
+
+  def name
+    puts "#{@name}"
   end
 end
 
