@@ -246,7 +246,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_accessor :name, :age
+  attr_reader :name, :age
   def initialize(name:, age:)
     @name = name
     @age = age
@@ -256,7 +256,7 @@ end
 
 class Zoo
   # 以下に回答を記載
-  attr_accessor :name, :entry_fee
+  # attr_accessor :name, :entry_fee
   def initialize(name:, entry_fee:)
     @name = name
     @entry_fee = entry_fee
@@ -265,13 +265,13 @@ class Zoo
   def info_entry_fee(user)
     case user.age
     when 0..5
-      p "#{user.name}さんの入場料は#{entry_fee[:infant]}円です。"
+      p "#{user.name}さんの入場料は#{@entry_fee[:infant]}円です。"
     when 6..12
-      p "#{user.name}さんの入場料は#{entry_fee[:children]}円です。"
+      p "#{user.name}さんの入場料は#{@entry_fee[:children]}円です。"
     when 13..64
-      p "#{user.name}さんの入場料は#{entry_fee[:adult]}円です。"
+      p "#{user.name}さんの入場料は#{@entry_fee[:adult]}円です。"
     when 65..120
-      p "#{user.name}さんの入場料は#{entry_fee[:senior]}円です。"
+      p "#{user.name}さんの入場料は#{@entry_fee[:senior]}円です。"
     end
   end
 
