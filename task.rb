@@ -263,16 +263,17 @@ class Zoo
   end
 
   def info_entry_fee(user)
-    case user.age
+    value = case user.age
     when 0..5
-      p "#{user.name}さんの入場料は#{@entry_fee[:infant]}円です。"
+      @entry_fee[:infant]# p "#{user.name}さんの入場料は#{@entry_fee[:infant]}円です。"
     when 6..12
-      p "#{user.name}さんの入場料は#{@entry_fee[:children]}円です。"
+      @entry_fee[:children]# p "#{user.name}さんの入場料は#{@entry_fee[:children]}円です。"
     when 13..64
-      p "#{user.name}さんの入場料は#{@entry_fee[:adult]}円です。"
+      @entry_fee[:adult]# p "#{user.name}さんの入場料は#{@entry_fee[:adult]}円です。"
     when 65..120
-      p "#{user.name}さんの入場料は#{@entry_fee[:senior]}円です。"
+      @entry_fee[:senior]
     end
+      p "#{user.name}さんの入場料は#{value}円です。"
   end
 
 end
